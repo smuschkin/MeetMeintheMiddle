@@ -184,20 +184,31 @@ function getYelpData() {
         for (i in response.businesses) {
             var lat = response.businesses[i].coordinates.latitude;
             var lng = response.businesses[i].coordinates.longitude;
-            new google.maps.Marker({
+            var marker = new google.maps.Marker({
                 position: { lat, lng },
                 map: map,
-                label: labels[i]
+                label: labels[i],
             });
 
             var name = response.businesses[i].name;
             var rating = response.businesses[i].rating;
+            var reviewCount = response.businesses[i].review_count;
+            var address = response.businesses[i].location.address1;
+            var yelpLink = response.businesses[i].url;
+
+            // Create marker click function
+            marker.addListener("click", function () {
+                new google.maps.InfoWindow({
+                    content: address,
+                }).open(map, marker);
+            });
+
             // Add yelp results to html
-            addYelpDiv(labels[i], name, rating);
+            addYelpDiv(labels[i]);
 
         }
         // function to add yelp results to html
-        function addYelpDiv(label, name, rating) {
+        function addYelpDiv(label) {
             // Create new div
             let newDiv = $("<div>");
             // Add class to div
@@ -206,7 +217,12 @@ function getYelpData() {
             $("#yelp").append(newDiv);
             // Add text to html
             newDiv.text(label + ". " + name);
-            newDiv.append($("<p>").text("Rating: " + rating));
+            if (reviewCount > 1) {
+                newDiv.append($("<p>").text("Rated " + rating + " out of 5 by " + reviewCount + " people"));
+            } else {
+                newDiv.append($("<p>").text("Rated " + rating + " out of 5 by " + reviewCount + " person"));
+            }
+            newDiv.append($("<a>").attr({ "href": yelpLink, "target": "_blank" }).text("Click for More Info!"));
         }
     });
 }
