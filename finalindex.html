@@ -1,0 +1,372 @@
+<!doctype html>
+<html class="no-js" lang="en-us" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet in the Middle</title>
+
+
+  <!--    Stylesheet Files    -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css" integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg=="
+    crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+
+  <!--    Javascript files are placed before </body>    -->
+
+  <style>
+    body {
+      overflow: auto;
+    }
+
+    #middle {
+      color: #333;
+      font-size: 1rem;
+    }
+
+    #map {
+      margin-top: 30px;
+      height: 800px;
+    }
+  </style>
+</head>
+
+<body>
+  <!--  Start Hero Section  -->
+  <header role="banner" class="hero">
+    <!--    Start Logo    -->
+    <ul class="title-area">
+      <li class="name">
+        <a href="#" class="logo">
+          <h1>Meet
+            <span class="tld">in the</span>Middle</h1>
+        </a>
+      </li>
+    </ul>
+    <!--    End Logo    -->
+
+    <!--    Start Hero Caption    -->
+    <div class="small-12 medium-8 large-9 columns">
+      <section class="caption">
+        <h1 class="mean_cap">Long Drives Suck...</h1>
+        <h2 class="sub_cap">Meet in the Middle and Have Fun. </h2>
+        <h2 class="sub_cap">Add Both Locations Below:</h2>
+        <a href="#" class="btn_details">
+          <span>More Details</span>
+          <img src="img/btn_arrow.png" alt="" src="" class="arrow">
+        </a>
+      </section>
+      <br>
+    </div>
+    <!--  End Hero Caption -->
+  </header>
+  <!--  End Hero Section  -->
+
+
+  <section class="meet-in-the-middle">
+    <div class="grid-container">
+
+
+
+
+      <!-- Start Form -->
+      <div class="grid-container">
+        <div id="map" class="gmap-container"></div>
+
+        <form class="o-form">
+          <div id="start-screen" class="grid-container">
+            <div class="grid-x grid-padding-x">
+              <div class="medium-6 cell">
+                <label>
+                  <input type="text" id="origin-input" class="controls" placeholder="Your Location">
+                </label>
+              </div>
+              <div class="medium-6 cell">
+                <label>
+                  <input type="text" id="destination-input" class="controls" placeholder="Your Friend's Location">
+                </label>
+              </div>
+            </div>
+            <div class="grid-x grid-padding-x">
+              <div class="medium-6 cell">
+                <label>What do you want to do?
+                  <input type="text" id="activity" placeholder="What do you want to do?">
+                </label>
+              </div>
+              <div class="medium-6 cell">
+                <label>
+                  Search Radius from Midpoint (in miles):
+                  <input type="number" id="radius" placeholder="Enter Radius">
+                </label>
+              </div>
+            </div>
+
+            <div id="mode-selector" class="controls">
+              <input type="radio" name="type" id="changemode-walking" checked="checked">
+              <label for="changemode-walking">Walking</label>
+
+              <input type="radio" name="type" id="changemode-transit">
+              <label for="changemode-transit">Transit</label>
+
+              <input type="radio" name="type" id="changemode-driving">
+              <label for="changemode-driving">Driving</label>
+            </div>
+            <div class="btn_holder">
+
+              <button type="button" class="btn_fancy">
+                meet in the middle
+
+              </button>
+            </div>
+          </div>
+
+
+      </div>
+      </form>
+      <!-- /.o-form -->
+
+      <div id="yelp"></div>
+    </div>
+  </section>
+
+
+
+  <!--  Start Services Section  -->
+  <section class="services" id="services">
+
+    <!--    Start Services Titles    -->
+    <div class="row">
+      <h1 class="mean_title">Plan your next trip and make seeing your friends fun!</h1>
+      <h2 class="sub_title">Enter your location, plan your visit, and enjoy!</h2>
+    </div>
+    <!--    End Services Titles    -->
+
+    <!--    Start Services List    -->
+    <div class="row services_list">
+      <div class="small-12 medium-3 large-3 columns">
+        <img src="img/icon2.png" alt="" title="" class="serv_icon" />
+        <h2 class="title">Plan Your Next Move</h2>
+        <p>Meet the fair way. No more extra driving.</p>
+      </div>
+
+      <div class="small-12 medium-3 large-3 columns">
+        <img src="img/icon1.png" alt="" title="" class="serv_icon" />
+        <h2 class="title">Find the Perfect Location</h2>
+        <p>Choose from a list of places to find the best place!</p>
+      </div>
+
+      <div class="small-12 medium-3 large-3 columns">
+        <img src="img/icon3.png" alt="" title="" class="serv_icon" />
+        <h2 class="title">Experience the Perfect Combo</h2>
+        <p>We have Yelp and we have Google, what can be better?</p>
+      </div>
+
+      <div class="small-12 medium-3 large-3 columns">
+        <img src="img/icon4.png" alt="" title="" class="serv_icon" />
+        <h2 class="title">Get Going!</h2>
+        <p>Go get on your way and meet whoever you're meeting!</p>
+      </div>
+    </div>
+    <!--    End Services List    -->
+
+
+
+  </section>
+  <!--  End Services Section  -->
+
+
+
+  <!--  Start Quote Section  -->
+  <section class="quote">
+    <!--    Start CTA Titles    -->
+    <h1 class="title">Try Meet in the Middle</h1>
+    <h2 class="sub_title">It's accurate. It's fair. It's fun.</h2>
+    <!--    End CTA Titles    -->
+  </section>
+  <!--  End Quote Section  -->
+
+
+
+  <!--  Start Testimonials Section  -->
+  <section class="testimonials" id="testimonials">
+    <div class="row">
+      <div class="slider_container">
+        <div id="carousel">
+
+          <div class="tesimonial">
+            <img src="img/jb.jpg" title="" alt="Justin Beiber" width=300px height=50px>
+            <span class="name">Reviews</span>
+            <p>Selena and I wish we had this website earlier in our relationship. With it, we wouldn't have fought as much about
+              where we should meet when we lived hours away from each other. I think we still would have been together if
+              this amazing group put this together sooner.</p>
+            <span class="author">@justinbeiber</span>
+          </div>
+
+          <div class="tesimonial">
+            <img src="img/lebron.png" title="" alt="lebron" width=300px>
+            <span class="name">Reviews</span>
+            <p>Picking a place for my buddy to meet is such a pain. There are so many great places in Cleveland to meet between
+              us that we had no idea about. Now, wherever we are, we put in our location and find the perfect spot. I'm never
+              leaving Cleveland now!</p>
+            <span class="author">@KingJames</span>
+          </div>
+
+          <div class="tesimonial">
+            <img src="img/ja.jpg" title="" alt="Jennifer Aniston" width=300px>
+            <span class="name">Reviews</span>
+            <p>My boyfriend and I always used to drive long distances to meet. Now we meet right in the middle! We find great
+              locations ahead of time and never have to take up precious time together looking for something to do!</p>
+            <span class="author">@JenniferAnWorld</span>
+          </div>
+
+        </div>
+      </div>
+
+      <!--    Start Testimonials Pagination    -->
+      <nav class="pagination">
+        <ul>
+          <li>
+            <a href="#">1</a>
+          </li>
+          <li>
+            <a href="#" class="selected">2</a>
+          </li>
+          <li>
+            <a href="#">3</a>
+          </li>
+        </ul>
+      </nav>
+      <!--    End Testimonials Pagination    -->
+
+    </div>
+  </section>
+  <!--  End Testimonials Section  -->
+
+
+
+  <!--  Start Call To Action Section  -->
+  <section class="cta" id="Download">
+    <div class="row">
+
+      <!--    Start CTA Titles    -->
+      <h1 class="title">Try Meet in the Middle</h1>
+      <h2 class="sub_title">There are so many reasons to try this.</h2>
+      <!--    End CTA Titles    -->
+
+      <!--    Start Button    -->
+      <a href="#" class="btn_fancy">
+        <div class="solid_layer"></div>
+        <div class="border_layer"></div>
+        <div class="text_layer">Search Now!</div>
+      </a>
+      <!--    End Button    -->
+
+    </div>
+  </section>
+  <!--  End Call To Action Section  -->
+
+
+
+
+  <!-- <div class="form-wrap">
+        <form action="" method="GET" name="search-form">
+          <input type="text" id="origin-input" class="form-input" placeholder="Enter your Location" required>
+          <input type="text" id="destination-input" class="form-input" placeholder="Other location" required>
+          <button class="find-middle">Find Middle</button>
+        </form>
+      </div> -->
+
+
+
+
+
+
+  <!--    Start Map Shadow    -->
+  <div class="shadow"></div>
+  <!--    End Map Shadow    -->
+
+  <div id="map_container"></div>
+  </section>
+  <!--  End Map Section  -->
+
+
+
+  <!--  Start Footer Section  -->
+  <footer>
+    <div class="row">
+
+      <!--    Start Copyrights    -->
+      <div class="small-12 medium-4 large-4 columns">
+        <div class="copyrights">
+          <a class="logo" href="#0">
+            <h1>meet
+              <span class="tld">in</span>the middle</h1>
+          </a>
+          <p>Copyright &copy; 2018 {{heroku-app-link.</p>
+        </div>
+      </div>
+      <!--    End Copyrights    -->
+
+
+      <div class="small-12 medium-8 large-8 columns">
+        <div class="contact_details right">
+          <nav class="social">
+            <ul class="no-bullet">
+              <li>
+                <a href="#0">Facebook</a>
+              </li>
+              <li>
+                <a href="#0" target="_blank">Instagram</a>
+              </li>
+              <li>
+                <a href="#0" target="_blank">Twitter</a>
+              </li>
+              <li>
+                <a href="#0" target="_blank">Google+</a>
+              </li>
+            </ul>
+          </nav>
+
+          <div class="contact">
+
+
+            <p class=""></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+  <!--  End Footer Section  -->
+
+  <!--    Start Back To Top    -->
+  <a href="#" class="btn_fancy" id="back_top">
+    <div class="solid_layer"></div>
+    <div class="border_layer"></div>
+    <div class="text_layer">
+      <img src="img/top_arrow.png" alt="Back to top" title="" class="top_arrow">
+    </div>
+  </a>
+  <!-- /back_top  -->
+
+
+
+
+
+  <!--    Javascript Files    -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <script src="js/project.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZ73W29ubLVV9YoW1dsMyob-ZlEiZWoPs&libraries=places&callback=initMap"
+    async defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/js/foundation.min.js" integrity="sha256-mRYlCu5EG+ouD07WxLF8v4ZAZYCA6WrmdIXyn1Bv9Vk= sha384-KzKofw4qqetd3kvuQ5AdapWPqV1ZI+CnfyfEwZQgPk8poOLWaabfgJOfmW7uI+AV sha512-0gHfaMkY+Do568TgjJC2iMAV0dQlY4NqbeZ4pr9lVUTXQzKu8qceyd6wg/3Uql9qA2+3X5NHv3IMb05wb387rA=="
+    crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/touchSwipe.min.js"></script>
+  <script type="text/javascript" src="js/easing.js"></script>
+  <script type="text/javascript" src="js/carouFredSel.js"></script>
+  <script type="text/javascript" src="js/scrollTo.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+
+</body>
+
+</html>
